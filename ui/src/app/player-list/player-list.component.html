@@ -1,0 +1,106 @@
+<div class="top-table">
+  <p><strong>All Payers Data</strong></p>
+  <p><button routerLink="/player">Add Player</button></p>
+</div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Game Played</th>
+    <th>Receptions</th>
+    <th>Rushing Yards</th>
+    <th>Sacks</th>
+    <th>Long Reception</th>
+    <th>Recieving Targets</th>
+    <th>Average</th>
+    <th>Recieving Touchdown</th>
+    <th>Rushing Attempts</th>
+    <th>Goals</th>
+    <th>Recieving Yards</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let player of players">
+    <td>{{player.name}}</td>
+    <td>{{player.gamePlayed}}</td>
+    <td>{{player.receptions}}</td>
+    <td>{{player.rushingYards}}</td>
+    <td>{{player.sacks}}</td>
+    <td>{{player.longReception}}</td>
+    <td>{{player.recievingTargets}}</td>
+    <td>{{player.average}}</td>
+    <td>{{player.recievingTouchdown}}</td>
+    <td>{{player.rushingAttempts}}</td>
+    <td>{{player.goals}}</td>
+    <td>{{player.recievingYards}}</td>
+    <td><button routerLink="/player/{{player._id}}">Edit</button> <button
+        (click)="deletePlayer(player._id)">Delete</button></td>
+  </tr>
+</table>
+<div class="action-button">
+  <button type="button" (click)="mostTouchDown()">Player with Most Touchdown</button>
+  <button type="button" (click)="mostRushingYards()">Player with Most Rushing Yards</button>
+  <button type="button" (click)="leastRushingYards()">Player with Least Rushing Yards</button>
+  <button type="button" (click)="sortedByGoals()">Sorted By Goals</button>
+  <button type="button" (click)="mostSacks()">Player with Most Sacks</button>
+</div>
+<div *ngIf="player">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Game Played</th>
+      <th>Receptions</th>
+      <th>Rushing Yards</th>
+      <th>Sacks</th>
+      <th>Long Reception</th>
+      <th>Recieving Targets</th>
+      <th>Average</th>
+      <th>Recieving Touchdown</th>
+      <th>Rushing Attempts</th>
+      <th>Goals</th>
+      <th>Recieving Yards</th>
+    </tr>
+    <tr>
+      <td>{{player.name}}</td>
+      <td>{{player.gamePlayed}}</td>
+      <td>{{player.receptions}}</td>
+      <td>{{player.rushingYards}}</td>
+      <td>{{player.sacks}}</td>
+      <td>{{player.longReception}}</td>
+      <td>{{player.recievingTargets}}</td>
+      <td>{{player.average}}</td>
+      <td>{{player.recievingTouchdown}}</td>
+      <td>{{player.rushingAttempts}}</td>
+      <td>{{player.goals}}</td>
+      <td>{{player.recievingYards}}</td>
+    </tr>
+  </table>
+</div>
+<table *ngIf="sortedPlayers.length">
+  <tr>
+    <th>Name</th>
+    <th>Game Played</th>
+    <th>Receptions</th>
+    <th>Rushing Yards</th>
+    <th>Sacks</th>
+    <th>Long Reception</th>
+    <th>Recieving Targets</th>
+    <th>Average</th>
+    <th>Recieving Touchdown</th>
+    <th>Rushing Attempts</th>
+    <th>Goals</th>
+    <th>Recieving Yards</th>
+  </tr>
+  <tr *ngFor="let player of sortedPlayers">
+    <td>{{player.name}}</td>
+    <td>{{player.gamePlayed}}</td>
+    <td>{{player.receptions}}</td>
+    <td>{{player.rushingYards}}</td>
+    <td>{{player.sacks}}</td>
+    <td>{{player.longReception}}</td>
+    <td>{{player.recievingTargets}}</td>
+    <td>{{player.average}}</td>
+    <td>{{player.recievingTouchdown}}</td>
+    <td>{{player.rushingAttempts}}</td>
+    <td>{{player.goals}}</td>
+    <td>{{player.recievingYards}}</td>
+  </tr>
+</table>

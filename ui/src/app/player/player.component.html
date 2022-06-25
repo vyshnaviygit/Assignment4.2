@@ -1,0 +1,53 @@
+<form [formGroup]="modalForm">
+  <div>
+    <label>Name:</label>
+    <input type="text" formControlName="name">
+  </div>
+  <div>
+    <label>Game Played:</label>
+    <input type="number" formControlName="gamePlayed">
+  </div>
+  <div>
+    <label>Receptions:</label>
+    <input type="number" formControlName="receptions">
+  </div>
+  <div>
+    <label>Recieving Targets:</label>
+    <input type="number" formControlName="recievingTargets">
+  </div>
+  <div>
+    <label>Recieving Yards:</label>
+    <input type="number" formControlName="recievingYards">
+  </div>
+  <div>
+    <label>Average:</label>
+    <input type="number" formControlName="average">
+  </div>
+  <div>
+    <label>Recieving Touchdown:</label>
+    <input type="number" formControlName="recievingTouchdown">
+  </div>
+  <div>
+    <label>Long Reception:</label>
+    <input type="number" formControlName="longReception">
+  </div>
+  <div>
+    <label>Rushing Attempts:</label>
+    <input type="number" formControlName="rushingAttempts">
+  </div>
+  <div>
+    <label>Rushing Yards:</label>
+    <input type="number" formControlName="rushingYards">
+  </div>
+  <div>
+    <label>Goals:</label>
+    <input type="number" formControlName="goals">
+  </div>
+  <div>
+    <label>Sacks:</label>
+    <input type="number" formControlName="sacks">
+  </div>
+</form>
+
+<button type="button" (click)="savePlayerData()">Save</button>
+<button type="button" (click)="goBack()">Go Back</button>
